@@ -53,13 +53,10 @@ const DefaultHeader = () => {
                       />
                     </Link>
                   </div>
-                  {/* End Logo */}
 
                   <MainMenu />
-                  {/* End Main Menu */}
                 </div>
               </div>
-              {/* End .col-auto */}
 
               <div className="col-auto">
                 <div className="d-flex align-items-center">
@@ -104,15 +101,10 @@ const DefaultHeader = () => {
                   </a>
                 </div>
               </div>
-              {/* End .col-auto */}
             </div>
-            {/* End .row */}
           </div>
         </nav>
       </header>
-      {/* End Header */}
-
-      {/* Signup Modal */}
       <div className="signup-modal">
         <div
           className="modal fade"
@@ -126,9 +118,6 @@ const DefaultHeader = () => {
           </div>
         </div>
       </div>
-      {/* End Signup Modal */}
-
-      {/* DesktopSidebarMenu */}
       <div
         className="offcanvas offcanvas-end"
         tabIndex="-1"
@@ -137,7 +126,6 @@ const DefaultHeader = () => {
       >
         <SidebarPanel />
       </div>
-      {/* Sidebar Panel End */}
     </>
   );
 };

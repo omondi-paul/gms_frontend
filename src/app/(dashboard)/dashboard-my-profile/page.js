@@ -8,9 +8,6 @@ import PersonalInfo from "@/components/property/dashboard/dashboard-profile/Pers
 import ProfileBox from "@/components/property/dashboard/dashboard-profile/ProfileBox";
 import SocialField from "@/components/property/dashboard/dashboard-profile/SocialField";
 
-export const metadata = {
-  title: "Dashboard My Profile || Homez - Real Estate NextJS Template",
-};
 
 const DashboardMyProfile = () => {
   return (

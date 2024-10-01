@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const reviews = [
@@ -7,24 +6,12 @@ const reviews = [
     date: "12 March 2022",
     rating: 5,
     text: "Every single thing we tried with John was delicious! Found some awesome places we would definitely go back to on our trip. John was also super friendly and passionate about Beşiktaş and Istanbul.",
-    images: [
-      "/images/blog/blog-single-3.jpg",
-      "/images/blog/blog-single-4.jpg",
-      "/images/blog/blog-single-5.jpg",
-      "/images/blog/blog-single-6.jpg",
-    ],
   },
   {
     name: "Darrell Steward",
     date: "12 March 2022",
     rating: 5,
     text: "Every single thing we tried with John was delicious! Found some awesome places we would definitely go back to on our trip. John was also super friendly and passionate about Beşiktaş and Istanbul.",
-    images: [
-      "/images/blog/blog-single-3.jpg",
-      "/images/blog/blog-single-4.jpg",
-      "/images/blog/blog-single-5.jpg",
-      "/images/blog/blog-single-6.jpg",
-    ],
   },
 ];
 
@@ -34,13 +21,6 @@ const SingleReview = () => {
       {reviews.map((review, index) => (
         <div className="col-md-12" key={index}>
           <div className="mbp_first position-relative d-flex align-items-center justify-content-start mt30 mb30-sm">
-            <Image
-              width={60}
-              height={60}
-              src="/images/blog/comments-2.png"
-              className="mr-3"
-              alt="comments-2.png"
-            />
             <div className="ml20">
               <h6 className="mt-0 mb-0">{review.name}</h6>
               <div>
@@ -62,19 +42,6 @@ const SingleReview = () => {
           {/* End .d-flex */}
 
           <p className="text mt20 mb20">{review.text}</p>
-          <ul className="mb20 ps-0">
-            {review.images.map((image, i) => (
-              <li className="list-inline-item mb5-xs" key={i}>
-                <Image
-                  width={110}
-                  height={90}
-                  className="bdrs6"
-                  src={image}
-                  alt="review-img"
-                />
-              </li>
-            ))}
-          </ul>
 
           <div className="review_cansel_btns d-flex bdrb1 pb30">
             <a href="#">

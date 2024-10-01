@@ -1,21 +1,13 @@
 import DefaultHeader from "@/components/common/DefaultHeader";
-import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import FormContact from "@/components/property/FormContact";
-
 import ProfessionalInfo from "@/components/property/ProfessionalInfo";
 import ReviewBoxForm from "@/components/property/ReviewBoxForm";
-import ListingItemsContainer from "@/components/property/agency-single/ListingItems";
-
 import SingleAgentCta from "@/components/property/agent-single/SingleAgentCta";
 import AllReviews from "@/components/property/reviews";
 import Image from "next/image";
-
 import React from "react";
 
-export const metadata = {
-  title: "Agent Single || Homez - Real Estate NextJS Template",
-};
 
 const AgentSingle = ({params}) => {
   return (
@@ -128,23 +120,18 @@ const AgentSingle = ({params}) => {
                   </div>
                 </div>
               </div>
-              {/* End .row */}
 
-              <ListingItemsContainer/>
               <div className="row">
                 <div className="col-lg-12">
                   <AllReviews />
-                  {/* End  AllReviews */}
 
                   <div className="bsp_reveiw_wrt">
                     <h6 className="fz17">Leave A Review</h6>
                     <ReviewBoxForm />
                   </div>
-                  {/* End ReviewBoxForm */}
                 </div>
               </div>
             </div>
-            {/* End .col-lg-8 */}
 
             <div className="col-lg-4">
               <div className="agent-single-form home8-contact-form default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-white position-relative">
@@ -155,17 +142,9 @@ const AgentSingle = ({params}) => {
                 <ProfessionalInfo />
               </div>
             </div>
-            {/* End .col-lg-4 */}
           </div>
         </div>
       </section>
-      {/* End Agent Single Section Area */}
-
-      {/* Start Our Footer */}
-      <section className="footer-style1 pt60 pb-0">
-        <Footer />
-      </section>
-      {/* End Our Footer */}
     </>
   );
 };
