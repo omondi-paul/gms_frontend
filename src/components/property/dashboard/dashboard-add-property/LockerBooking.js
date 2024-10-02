@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
+import "./LockerBooking.css";
 
 const lockerData = {
   column1: [
@@ -32,6 +33,13 @@ const lockerData = {
   ],
 };
 
+const getCurrentTimeInEAT = () => {
+  const now = new Date();
+  const utcDate = new Date(now.toUTCString());
+  const eatDate = new Date(utcDate.getTime() + 3 * 60 * 60 * 1000);
+  return eatDate.toISOString().slice(0, 16);
+};
+
 const LockerBooking = () => {
   const [bookingDetails, setBookingDetails] = useState([]);
   const [checkedState, setCheckedState] = useState(
@@ -46,31 +54,91 @@ const LockerBooking = () => {
   const handleFieldChange = (e, index, fieldName) => {
     const updatedDetails = [...bookingDetails];
     updatedDetails[index][fieldName] = e.target.value;
+
+    if (fieldName === "startTime") {
+      const endTime = new Date(e.target.value);
+      endTime.setMinutes(endTime.getMinutes() + 30);
+      updatedDetails[index].endTime = endTime.toISOString().slice(0, 16);
+    }
+
+    if (fieldName === "endTime") {
+      const startTime = new Date(updatedDetails[index].startTime);
+      const selectedEndTime = new Date(e.target.value);
+      if (selectedEndTime <= startTime) {
+        alert("End time must be greater than start time.");
+        return;
+      }
+    }
+
     setBookingDetails(updatedDetails);
   };
 
-  const addRow = (lockerLabel) => {
-    const currentTime = new Date().toISOString().slice(0, 16); // current time in 'yyyy-mm-ddThh:mm' format
+  const addRow = () => {
     setBookingDetails([
+      {
+        locker: "",
+        startTime: getCurrentTimeInEAT(),
+        endTime: "",
+      },
       ...bookingDetails,
-      { locker: lockerLabel, startTime: currentTime, endTime: "" },
     ]);
   };
 
-  const handleDeleteRow = (index) => {
+  const removeRow = (lockerLabel) => {
+    const updatedDetails = bookingDetails.filter(
+      (detail) => detail.locker !== lockerLabel
+    );
+    setBookingDetails(updatedDetails);
+  };
+
+  const handleDeleteRow = (index, lockerLabel) => {
     const updatedDetails = bookingDetails.filter((_, i) => i !== index);
     setBookingDetails(updatedDetails);
+    setCheckedState((prevState) => ({
+      ...prevState,
+      [lockerLabel]: false,
+    }));
   };
 
   const handleCheckboxChange = (lockerLabel) => {
     if (!checkedState[lockerLabel]) {
-      // If the locker was not previously checked, add a new row
-      addRow(lockerLabel);
+      setBookingDetails([
+        {
+          locker: lockerLabel,
+          startTime: getCurrentTimeInEAT(),
+          endTime: "",
+        },
+        ...bookingDetails,
+      ]);
+    } else {
+      removeRow(lockerLabel);
     }
     setCheckedState({
       ...checkedState,
       [lockerLabel]: !checkedState[lockerLabel],
     });
+  };
+
+  const handleLockerSelect = (selectedLocker, index) => {
+    const updatedDetails = [...bookingDetails];
+    const existingRowIndex = updatedDetails.findIndex(
+      (detail) => detail.locker === selectedLocker
+    );
+
+    if (existingRowIndex === -1) {
+      updatedDetails[index].locker = selectedLocker;
+      setCheckedState((prevState) => {
+        const newCheckedState = { ...prevState };
+        Object.keys(newCheckedState).forEach((locker) => {
+          if (locker === selectedLocker) {
+            newCheckedState[locker] = true;
+          }
+        });
+        return newCheckedState;
+      });
+    }
+
+    setBookingDetails(updatedDetails);
   };
 
   return (
@@ -80,13 +148,19 @@ const LockerBooking = () => {
           <div key={index} className="col-sm-6 col-lg-3 col-xxl-2">
             <div className="checkbox-style1">
               {lockerData[columnKey].map((locker, lockerIndex) => (
-                <label key={lockerIndex} className="custom_checkbox">
+                <label
+                  key={lockerIndex}
+                  className="custom_checkbox"
+                  style={{
+                    color: locker.defaultChecked ? "red" : "inherit",
+                  }}
+                >
                   {locker.label}
                   <input
                     type="checkbox"
                     checked={checkedState[locker.label]}
                     onChange={() => handleCheckboxChange(locker.label)}
-                    disabled={locker.defaultChecked} // Disable if initially checked
+                    disabled={locker.defaultChecked}
                   />
                   <span className="checkmark" />
                 </label>
@@ -96,7 +170,12 @@ const LockerBooking = () => {
         ))}
       </div>
 
-      {/* Booking Details Table */}
+      <div className="mt-3 mb-3">
+        <button className="btn btn-primary" onClick={addRow}>
+          Add Row
+        </button>
+      </div>
+
       <div className="row mb-3">
         <div className="col-sm-12">
           <table className="table">
@@ -110,16 +189,28 @@ const LockerBooking = () => {
             </thead>
             <tbody>
               {bookingDetails.map((detail, index) => (
-                <tr key={index}>
+                <tr
+                  key={index}
+                  style={{
+                    backgroundColor:
+                      new Date(detail.endTime) < new Date() ? "red" : "white",
+                  }}
+                >
                   <td>
                     <select
                       value={detail.locker}
-                      onChange={(e) => handleFieldChange(e, index, "locker")}
+                      onChange={(e) => handleLockerSelect(e.target.value, index)}
                       className="form-select"
+                      disabled={detail.locker} // Disable if locker is already selected
                     >
                       <option value="">Select Locker</option>
                       {Object.values(lockerData)
                         .flat()
+                        .filter(
+                          (locker) =>
+                            !checkedState[locker.label] ||
+                            locker.label === detail.locker
+                        )
                         .map((locker, lockerIndex) => (
                           <option key={lockerIndex} value={locker.label}>
                             {locker.label}
@@ -131,9 +222,7 @@ const LockerBooking = () => {
                     <input
                       type="datetime-local"
                       value={detail.startTime}
-                      onChange={(e) =>
-                        handleFieldChange(e, index, "startTime")
-                      }
+                      onChange={(e) => handleFieldChange(e, index, "startTime")}
                       className="form-control"
                     />
                   </td>
@@ -149,24 +238,13 @@ const LockerBooking = () => {
                     <button
                       type="button"
                       className="btn btn-danger"
-                      onClick={() => handleDeleteRow(index)}
+                      onClick={() => handleDeleteRow(index, detail.locker)}
                     >
                       Delete
                     </button>
                   </td>
                 </tr>
               ))}
-              <tr>
-                <td colSpan="4">
-                  <button
-                    type="button"
-                    className="btn btn-link"
-                    onClick={() => addRow("")}
-                  >
-                    <i className="fas fa-plus-circle"></i> Add Row
-                  </button>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
