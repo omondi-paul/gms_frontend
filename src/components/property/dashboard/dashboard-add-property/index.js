@@ -1,9 +1,9 @@
 import React from "react";
-import PropertyDescription from "./property-description";
+import Membership from "./Membership";
 import GymMembership from "./gym_membership";
 import LocationField from "./LocationField";
 import DetailsFiled from "./details-field";
-import Amenities from "./Amenities";
+import LockerBooking from "./LockerBooking";
 
 const AddPropertyTabContent = () => {
   return (
@@ -32,7 +32,7 @@ const AddPropertyTabContent = () => {
             aria-controls="nav-item2"
             aria-selected="false"
           >
-            2. Media
+            2. Membership
           </button>
           <button
             className="nav-link fw600"
@@ -44,7 +44,7 @@ const AddPropertyTabContent = () => {
             aria-controls="nav-item3"
             aria-selected="false"
           >
-            3. Location
+            3. Locker Booking
           </button>
           <button
             className="nav-link fw600"
@@ -56,7 +56,7 @@ const AddPropertyTabContent = () => {
             aria-controls="nav-item4"
             aria-selected="false"
           >
-            4. Detail
+            4. Details
           </button>
           <button
             className="nav-link fw600"
@@ -68,7 +68,7 @@ const AddPropertyTabContent = () => {
             aria-controls="nav-item5"
             aria-selected="false"
           >
-            5. Amenities
+            5. Location
           </button>
         </div>
       </nav>
@@ -81,20 +81,18 @@ const AddPropertyTabContent = () => {
           aria-labelledby="nav-item1-tab"
         >
           <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-            <h4 className="title fz17 mb30">Property Description</h4>
-            <PropertyDescription />
+            <GymMembership />
           </div>
         </div>
 
         <div
-          className="tab-pane fade show active"
+          className="tab-pane fade"
           id="nav-item2"
           role="tabpanel"
           aria-labelledby="nav-item2-tab"
         >
           <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-            <h4 className="title fz17 mb30">Gym Membership</h4>
-            <GymMembership/>
+            <Membership />
           </div>
         </div>
 
@@ -105,8 +103,10 @@ const AddPropertyTabContent = () => {
           aria-labelledby="nav-item3-tab"
         >
           <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-            <h4 className="title fz17 mb30">Listing Location</h4>
-            <LocationField />
+            <h4 className="title fz17 mb30">Select Locker Booking</h4>
+            <div className="row">
+              <LockerBooking />
+            </div>
           </div>
         </div>
 
@@ -129,10 +129,8 @@ const AddPropertyTabContent = () => {
           aria-labelledby="nav-item5-tab"
         >
           <div className="ps-widget bgc-white bdrs12 p30 overflow-hidden position-relative">
-            <h4 className="title fz17 mb30">Select Amenities</h4>
-            <div className="row">
-              <Amenities />
-            </div>
+            <h4 className="title fz17 mb30">Listing Location</h4>
+            <LocationField />
           </div>
         </div>
       </div>
