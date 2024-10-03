@@ -1,5 +1,5 @@
 import React from "react";
-import listings from "@/data/listings";
+import listings from "@/data/workout_plans";
 import Image from "next/image";
 
 const RecentProperty = () => {

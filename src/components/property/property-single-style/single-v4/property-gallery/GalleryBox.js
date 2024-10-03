@@ -1,5 +1,5 @@
 "use client";
-import listings from "@/data/listings";
+import listings from "@/data/workout_plans";
 import Image from "next/image";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";

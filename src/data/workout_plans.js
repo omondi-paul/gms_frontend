@@ -1,0 +1,52 @@
+module.exports = [
+  {
+    id: 1,
+    image: "/images/listings/g1-1.jpg",
+    title: "Premier Fitness Center",
+    classes: "Yoga, Cardio",
+    price: "$150/month",
+    tags: ["gym", "fitness"],
+    featured: true,
+  },
+  {
+    id: 2,
+    image: "/images/listings/g1-2.jpg",
+    title: "Luxury Health Club",
+    classes: "Pilates, Spin",
+    price: "$200/month",
+    tags: ["gym", "club", "wellness"],
+  },
+  {
+    id: 3,
+    image: "/images/listings/g1-3.jpg",
+    title: "Family Fitness Center",
+    classes: "Zumba, CrossFit",
+    price: "$100/month",
+    tags: ["gym", "fitness", "family"],
+  },
+  {
+    id: 4,
+    image: "/images/listings/g1-4.jpg",
+    title: "Elite Wellness Studio",
+    classes: "Yoga, Martial Arts",
+    price: "$120/month",
+    tags: ["wellness", "studio", "fitness"],
+  },
+  {
+    id: 5,
+    image: "/images/listings/g1-1.jpg",
+    title: "Downtown Gym & Fitness",
+    classes: "CrossFit, Spin",
+    price: "$130/month",
+    tags: ["fitness", "gym"],
+  },
+  {
+    id: 6,
+    image: "/images/listings/g1-2.jpg",
+    title: "City Fitness Club",
+    city: 'California',
+    classes: "Pilates, Yoga",
+    price: "$140/month",
+    tags: ["club", "fitness"],
+  }
+];

@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState } from 'react'
 import ListingItems from '../ListingItems'
-import listings from '@/data/listings'
+import listings from '@/data/workout_plans'
 import Link from 'next/link'
 export default function ListingItemsContainer() {
     const [currentCategory, setCurrentCategory] = useState('All')

@@ -4,7 +4,7 @@ import React from "react";
 import SearchBox from "./SearchBox";
 import ListingStatus from "./ListingStatus";
 import PropertyType from "./PropertyType";
-import PriceSlider from "./PriceRange";
+import PriceSlider from "./MembershipPriceRange";
 import Bedroom from "./Bedroom";
 import Bathroom from "./Bathroom";
 import Location from "./Location";

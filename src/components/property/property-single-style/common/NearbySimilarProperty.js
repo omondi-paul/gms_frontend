@@ -1,5 +1,5 @@
 "use client";
-import listings from "@/data/listings";
+import listings from "@/data/workout_plans";
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination } from "swiper";

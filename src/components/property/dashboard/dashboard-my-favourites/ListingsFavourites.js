@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import listings from "@/data/listings";
+import listings from "@/data/workout_plans";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";

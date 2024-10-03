@@ -1,13 +1,10 @@
-'use client'
-
 import React from "react";
 
-const ListingStatus = ({filterFunctions}) => {
+const GymType = ({ filterFunctions }) => {
   const options = [
-    { id: "flexRadioDefault3", label: "All" , defaultChecked: true },
-    { id: "flexRadioDefault1", label: "Buy" },
-    { id: "flexRadioDefault2", label: "Rent", },
-
+    { id: "flexRadioDefault3", label: "All", defaultChecked: true },
+    { id: "flexRadioDefault1", label: "Monthly" },
+    { id: "flexRadioDefault2", label: "Yearly" },
   ];
 
   return (
@@ -16,18 +13,12 @@ const ListingStatus = ({filterFunctions}) => {
         <div
           className="form-check d-flex align-items-center mb10"
           key={option.id}
-         
         >
           <input
             className="form-check-input"
             type="radio"
-            checked={filterFunctions?.listingStatus == option.label}
-            
-            onChange={()=>filterFunctions.handlelistingStatus(option.label)}
-           
-            
-   
-            
+            checked={filterFunctions?.membershipType === option.label}
+            onChange={() => filterFunctions.handleGymType(option.label)}
           />
           <label className="form-check-label" htmlFor={option.id}>
             {option.label}
@@ -38,4 +29,4 @@ const ListingStatus = ({filterFunctions}) => {
   );
 };
 
-export default ListingStatus;
+export default GymType;

@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Thumbs } from "swiper";
 import Image from "next/image";
 import "photoswipe/dist/photoswipe.css";
-import listings from "@/data/listings";
+import listings from "@/data/workout_plans";
 
 const images = [
   "/images/listings/listing-single-6-1.jpg",

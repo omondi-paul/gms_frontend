@@ -1,4 +1,4 @@
-import listings from "@/data/listings";
+import listings from "@/data/workout_plans";
 import React from "react";
 
 

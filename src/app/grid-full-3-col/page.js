@@ -1,6 +1,6 @@
 import DefaultHeader from "@/components/common/DefaultHeader";
 import MobileMenu from "@/components/common/mobile-menu";
-import ProperteyFiltering from "@/components/grid-full-3-col/ProperteyFiltering";
+import WorkOutFiltering from "@/components/grid-full-3-col/WorkOutFiltering";
 import React from "react";
 
 const GridFull3Col = () => {
@@ -32,7 +32,7 @@ const GridFull3Col = () => {
           </div>
         </div>
       </section>
-      <ProperteyFiltering/>
+      <WorkOutFiltering/>
 
     </>
   );
