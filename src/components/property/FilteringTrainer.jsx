@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import AllTrainers from './trainers/AllTrainers';
 import trainers from '@/data/trainers'; 
-import PaginationTwo from '../listing/PaginationTwo';
+import PaginationTwo from '../PaginationTwo';
 
 export default function FilteringTrainer() {
     const [pageNumber, setPageNumber] = useState(1);
