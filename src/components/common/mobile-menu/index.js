@@ -58,7 +58,7 @@ const MobileMenu = () => {
             >
               <span className="far fa-times"></span>
             </div>
-            <h4 className="title">Welcome to Homez</h4>
+            <h4 className="title">Welcome toOur GMS</h4>
           </div>
 
           <div className="hsidebar-content ">
