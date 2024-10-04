@@ -40,7 +40,6 @@ const MobileMenu = () => {
           </div>
         </div>
       </div>
-      {/* /.mobile-menu meta */}
 
       <div
         className="offcanvas offcanvas-start mobile_menu-canvas"

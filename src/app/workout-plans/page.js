@@ -1,7 +1,7 @@
 import React from "react";
 import DefaultHeader from "@/components/common/DefaultHeader";
 import MobileMenu from "@/components/common/mobile-menu";
-import WorkOutFiltering from "@/components/grid-full-3-col/WorkOutFiltering";
+import WorkOutFiltering from "@/components/workout_plans/WorkOutFiltering";
 
 const GridFull3Col = () => {
   return (
