@@ -36,7 +36,7 @@ const WorkOutFiltering = () => {
                   <p className="list-text">{plan.time}</p>
                   <hr className="mt-2 mb-2" />
                   <div className="list-meta d-flex justify-content-between align-items-center">
-                    <Link href={`/workout/${plan.id}`} className="btn btn-primary">View Details</Link>
+                    <Link href={`/single-v4/${plan.id}`} className="btn btn-primary">View Details</Link>
                   </div>
                 </div>
               </div>

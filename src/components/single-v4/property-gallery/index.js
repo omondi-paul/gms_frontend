@@ -1,6 +1,5 @@
 import React from "react";
 import GalleryBox from "./GalleryBox";
-import Map from "./Map";
 import RealMapView from "./RealMapView";
 
 const PropertyGallery = ({id}) => {
@@ -82,29 +81,8 @@ const PropertyGallery = ({id}) => {
               </div>
             </div>
           </div>
-          {/* End tab-pane gallery */}
 
-          <div
-            className="tab-pane fade"
-            id="pills-profile"
-            role="tabpanel"
-            aria-labelledby="pills-profile-tab"
-          >
-            <Map />
-          </div>
-          {/* End tab-pane map */}
-
-          <div
-            className="tab-pane fade"
-            id="pills-contact"
-            role="tabpanel"
-            aria-labelledby="pills-contact-tab"
-          >
-            <RealMapView />
-          </div>
-          {/* End tab-pane real location */}
         </div>
-        {/* End tab-content */}
       </div>
     </>
   );
