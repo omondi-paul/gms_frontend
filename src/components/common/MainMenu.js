@@ -30,6 +30,15 @@ const MainMenu = () => {
           </span>
         </a>
       </li>
+
+
+      <li className="megamenu_style dropitem">
+        <a className="list-item" href="#" onClick={() => (window.location.href = "/workout-plans")}>
+          <span className={topMenu === "workout-plans" ? "title menuActive" : "title"}>
+            Workout Plans
+          </span>
+        </a>
+      </li>
     </ul>
   );
 };

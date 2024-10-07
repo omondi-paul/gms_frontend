@@ -27,9 +27,9 @@ const SidebarDashboard = () => {
       title: "MANAGE LISTINGS",
       items: [
         {
-          href: "/dashboard-add-property",
+          href: "/dashboard-member",
           icon: "flaticon-new-tab",
-          text: "Add New Property",
+          text: "Gym Member",
         },
     //     {
     //       href: "/dashboard-my-properties",
