@@ -1,6 +1,6 @@
 import React from "react";
 
-const PropertyDetails = () => {
+const WorkoutPlanDetails = () => {
   const columns = [
     [
       {
@@ -75,4 +75,4 @@ const PropertyDetails = () => {
   );
 };
 
-export default PropertyDetails;
+export default WorkoutPlanDetails;

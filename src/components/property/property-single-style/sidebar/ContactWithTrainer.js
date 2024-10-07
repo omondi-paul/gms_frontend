@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ContactWithAgent = () => {
+const ContactWithTrainer = () => {
   return (
     <>
       <div className="agent-single d-sm-flex align-items-center pb25">
@@ -43,4 +43,4 @@ const ContactWithAgent = () => {
   );
 };
 
-export default ContactWithAgent;
+export default ContactWithTrainer;

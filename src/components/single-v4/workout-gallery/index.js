@@ -1,7 +1,7 @@
 import React from "react";
 import GalleryBox from "./GalleryBox";
 
-const PropertyGallery = ({id}) => {
+const WorkOutGallery = ({id}) => {
   return (
     <>
 
@@ -30,4 +30,4 @@ const PropertyGallery = ({id}) => {
   );
 };
 
-export default PropertyGallery;
+export default WorkOutGallery;

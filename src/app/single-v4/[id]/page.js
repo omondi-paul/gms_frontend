@@ -1,54 +1,46 @@
 import MobileMenu from "@/components/common/mobile-menu";
-import Header from "@/components/home/Header";
 import OverView from "@/components/property/property-single-style/common/OverView";
-import PropertyDetails from "@/components/property/property-single-style/common/PropertyDetails";
-import PropertyHeader from "@/components/single-v4/PropertyHeader";
+import WorkoutPlanDetails from "@/components/property/property-single-style/common/WorkoutPlanDetails";
 import PropertyVideo from "@/components/property/property-single-style/common/PropertyVideo";
-import ProperytyDescriptions from "@/components/property/property-single-style/common/ProperytyDescriptions";
+import WorkOutDescriptions from "@/components/property/property-single-style/common/WokOutDescriptions";
 import ReviewBoxForm from "@/components/property/property-single-style/common/ReviewBoxForm";
 import AllReviews from "@/components/property/property-single-style/common/reviews";
-import ContactWithAgent from "@/components/property/property-single-style/sidebar/ContactWithAgent";
-import PropertyGallery from "@/components/single-v4/property-gallery";
-
-export const metadata = {
-  title: "Property Single V4 || Homez - Real Estate NextJS Template",
-};
+import ContactWithTrainer from "@/components/property/property-single-style/sidebar/ContactWithTrainer";
+import WorkOutGallery from "@/components/single-v4/workout-gallery";
+import DefaultHeader from "@/components/common/DefaultHeader";
 
 const SingleV4 = ({params}) => {
   return (
     <>
-     <Header />
+     <DefaultHeader />
       <MobileMenu />
       <section className="pt20 pb60 bgc-white">
-        <PropertyGallery id={params.id} />
+        <WorkOutGallery id={params.id} />
       </section>
       <section className="pt0 pb90 bgc-white">
         <div className="container">
-          <div className="row">
-            <PropertyHeader id={params.id} />
-          </div>
 
           <div className="row wrap">
             <div className="col-lg-8">
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                <h4 className="title fz17 mb30">Overview</h4>
+                <h4 className="title fz17 mb30">Plan Overview</h4>
                 <div className="row">
                   <OverView id={params.id} />
                 </div>
               </div>
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                <h4 className="title fz17 mb30">Property Description</h4>
-                <ProperytyDescriptions />
+                <h4 className="title fz17 mb30">Workout Plan Description</h4>
+                <WorkOutDescriptions />
 
-                <h4 className="title fz17 mb30 mt50">Property Details</h4>
+                <h4 className="title fz17 mb30 mt50">Workout Plan Details</h4>
                 <div className="row">
-                  <PropertyDetails />
+                  <WorkoutPlanDetails />
                 </div>
               </div>
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 ">
-                <h4 className="title fz17 mb30">Video</h4>
+                <h4 className="title fz17 mb30">Workout Video</h4>
                 <div className="row">
                   <PropertyVideo />
                 </div>
@@ -73,8 +65,8 @@ const SingleV4 = ({params}) => {
 
                 <div className="agen-personal-info position-relative bgc-white default-box-shadow1 bdrs12 p30 mt30">
                   <div className="widget-wrapper mb-0">
-                    <h6 className="title fz17 mb30">Get More Information</h6>
-                    <ContactWithAgent />
+                    <h6 className="title fz17 mb30">Contact A Trainer</h6>
+                    <ContactWithTrainer />
                   </div>
                 </div>
               </div>

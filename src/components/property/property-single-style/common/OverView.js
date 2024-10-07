@@ -1,45 +1,43 @@
 import listings from "@/data/workout_plans";
 import React from "react";
 
-
 const OverView = ({id}) => {
   const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
   const overviewData = [
     {
       icon: "flaticon-bed",
-      label: "Bedroom",
-      value: data.bed,
+      label: "Duration (Weeks)",
+      value: data.duration,
     },
     {
       icon: "flaticon-shower",
-      label: "Bath",
-      value: data.bath,
+      label: "Sessions per Week",
+      value: data.sessionsPerWeek,
     },
     {
       icon: "flaticon-event",
-      label: "Year Built",
-      value: data.yearBuilding,
+      label: "Start Date",
+      value: data.startDate,
     },
     {
       icon: "flaticon-garage",
-      label: "Garage",
-      value: "2",
+      label: "Intensity Level",
+      value: data.intensityLevel,
       xs: true,
     },
     {
       icon: "flaticon-expand",
-      label: "Sqft",
-      value: data.sqft,
+      label: "Total Workouts",
+      value: data.totalWorkouts,
       xs: true,
     },
     {
       icon: "flaticon-home-1",
-      label: "Property Type",
-      value: data.propertyType,
+      label: "Workout Type",
+      value: data.workoutType,
     },
   ];
-  
- 
+
   return (
     <>
       {overviewData.map((item, index) => (
