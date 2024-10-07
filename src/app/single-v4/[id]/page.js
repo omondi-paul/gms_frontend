@@ -1,7 +1,7 @@
 import MobileMenu from "@/components/common/mobile-menu";
 import OverView from "@/components/property/property-single-style/common/OverView";
 import WorkoutPlanDetails from "@/components/property/property-single-style/common/WorkoutPlanDetails";
-import PropertyVideo from "@/components/property/property-single-style/common/PropertyVideo";
+import WorkOutPlanVideo from "@/components/property/property-single-style/common/WorkOutPlanVideo";
 import WorkOutDescriptions from "@/components/property/property-single-style/common/WokOutDescriptions";
 import ReviewBoxForm from "@/components/property/property-single-style/common/ReviewBoxForm";
 import AllReviews from "@/components/property/property-single-style/common/reviews";
@@ -42,7 +42,7 @@ const SingleV4 = ({params}) => {
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 ">
                 <h4 className="title fz17 mb30">Workout Video</h4>
                 <div className="row">
-                  <PropertyVideo />
+                  <WorkOutPlanVideo />
                 </div>
               </div>
 
