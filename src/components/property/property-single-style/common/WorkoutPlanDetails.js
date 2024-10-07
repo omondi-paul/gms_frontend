@@ -4,46 +4,46 @@ const WorkoutPlanDetails = () => {
   const columns = [
     [
       {
-        label: "Property ID",
-        value: "RT48",
+        label: "Plan ID",
+        value: "WP1001",
       },
       {
         label: "Price",
-        value: "$252,000",
+        value: "$49.99/month",
       },
       {
-        label: "Property Size",
-        value: "1500 Sq Ft",
+        label: "Duration",
+        value: "12 Weeks",
       },
       {
-        label: "Bathrooms",
-        value: "3",
+        label: "Workouts per Week",
+        value: "4",
       },
       {
-        label: "Bedrooms",
-        value: "2",
+        label: "Fitness Level",
+        value: "All Levels",
       },
     ],
     [
       {
-        label: "Garage",
-        value: "2",
+        label: "Nutrition Plan",
+        value: "Included",
       },
       {
-        label: "Garage Size",
-        value: "200 SqFt",
+        label: "Trainer Support",
+        value: "24/7 Access",
       },
       {
-        label: "Year Built",
-        value: "2022",
+        label: "Access to Videos",
+        value: "Yes",
       },
       {
-        label: "Property Type",
-        value: "Apartment",
+        label: "Progress Tracking",
+        value: "Weekly Check-ins",
       },
       {
-        label: "Property Status",
-        value: "For Sale",
+        label: "Community Access",
+        value: "Members Only",
       },
     ],
   ];
