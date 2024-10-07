@@ -7,7 +7,7 @@ const ReviewBoxForm = () => {
     { value: "Four Star", label: "Four Star" },
     { value: "Three Sta", label: "Three Star" },
     { value: "Two Sta", label: "Two Star" },
-    { value: "One Sta", label: "One Star" },
+    { value: "One Star", label: "One Star" },
   ];
 
   const customStyles = {
@@ -26,8 +26,7 @@ const ReviewBoxForm = () => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevents the default form submission behavior
-    // Additional logic or API calls can be added here
+    event.preventDefault(); 
   };
 
   return (
