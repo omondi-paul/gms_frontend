@@ -8,23 +8,23 @@ const SidebarDashboard = () => {
 
   
   const sidebarItems = [
-    // {
-    //   title: "MAIN",
-    //   items: [
-    //     {
-    //       href: "/dashboard-home",
-    //       icon: "flaticon-discovery",
-    //       text: "Dashboard",
-    //     },
-    //     {
-    //       href: "/dashboard-message",
-    //       icon: "flaticon-chat-1",
-    //       text: "Message",
-    //     },
-    //   ],
-    // },
     {
-      title: "MANAGE LISTINGS",
+      title: "MAIN",
+      items: [
+        {
+          href: "/dashboard-home",
+          icon: "flaticon-discovery",
+          text: "Dashboard",
+        },
+        {
+          href: "/dashboard-message",
+          icon: "flaticon-chat-1",
+          text: "Message",
+        },
+      ],
+    },
+    {
+      title: "MANAGE MY PROFILE",
       items: [
         {
           href: "/dashboard-member",
