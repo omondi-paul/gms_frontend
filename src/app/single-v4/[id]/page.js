@@ -1,4 +1,5 @@
 import MobileMenu from "@/components/common/mobile-menu";
+import Header from "@/components/home/Header";
 import OverView from "@/components/property/property-single-style/common/OverView";
 import PropertyDetails from "@/components/property/property-single-style/common/PropertyDetails";
 import PropertyHeader from "@/components/single-v4/PropertyHeader";
@@ -16,25 +17,16 @@ export const metadata = {
 const SingleV4 = ({params}) => {
   return (
     <>
-
-
-      {/* Mobile Nav  */}
+     <Header />
       <MobileMenu />
-      {/* End Mobile Nav  */}
-
-      {/* Property Slider Gallery */}
       <section className="pt20 pb60 bgc-white">
         <PropertyGallery id={params.id} />
       </section>
-      {/* End Property Slider Gallery */}
-
-      {/* Property All Single V4 */}
       <section className="pt0 pb90 bgc-white">
         <div className="container">
           <div className="row">
             <PropertyHeader id={params.id} />
           </div>
-          {/* End .row */}
 
           <div className="row wrap">
             <div className="col-lg-8">
@@ -44,12 +36,10 @@ const SingleV4 = ({params}) => {
                   <OverView id={params.id} />
                 </div>
               </div>
-              {/* End .ps-widget */}
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Property Description</h4>
                 <ProperytyDescriptions />
-                {/* End property description */}
 
                 <h4 className="title fz17 mb30 mt50">Property Details</h4>
                 <div className="row">
@@ -66,11 +56,9 @@ const SingleV4 = ({params}) => {
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <div className="row">
-                  {/* <AllComments /> */}
                   <AllReviews />
                 </div>
               </div>
-              {/* End .ps-widget */}
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Leave A Review</h4>
