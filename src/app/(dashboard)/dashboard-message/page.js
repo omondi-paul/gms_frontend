@@ -8,10 +8,6 @@ import UserChatBoxContent from "@/components/property/dashboard/dashboard-messag
 import UserInboxList from "@/components/property/dashboard/dashboard-message/UserInboxList";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Dashboard Message || Homez - Real Estate NextJS Template",
-};
-
 const DashboardMessage = () => {
   return (
     <>
