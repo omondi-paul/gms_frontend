@@ -1,5 +1,4 @@
 import MobileMenu from "@/components/common/mobile-menu";
-import OverView from "@/components/property/property-single-style/common/OverView";
 import WorkoutPlanDetails from "@/components/property/property-single-style/common/WorkoutPlanDetails";
 import WorkOutPlanVideo from "@/components/property/property-single-style/common/WorkOutPlanVideo";
 import WorkOutDescriptions from "@/components/property/property-single-style/common/WokOutDescriptions";
@@ -22,13 +21,7 @@ const SingleV4 = ({params}) => {
 
           <div className="row wrap">
             <div className="col-lg-8">
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                <h4 className="title fz17 mb30">Plan Overview</h4>
-                <div className="row">
-                  <OverView id={params.id} />
-                </div>
-              </div>
-
+            
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <h4 className="title fz17 mb30">Workout Plan Description</h4>
                 <WorkOutDescriptions />
