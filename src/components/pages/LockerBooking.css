@@ -1,0 +1,9 @@
+input[type="datetime-local"] {
+  padding: 10px; /* Increase padding for better usability */
+  font-size: 1.2em; /* Increase font size */
+}
+
+.checkmark {
+  width: 24px; /* Adjust the size of the checkbox checkmark */
+  height: 24px;
+}
