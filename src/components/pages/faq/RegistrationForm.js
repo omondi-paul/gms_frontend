@@ -1,30 +1,58 @@
 "use client";
+import { useState } from "react";
 import Select from "react-select";
+import { register_member } from "@/constants/api"; // assuming this is the function for sending data
 
-const GymMembership = () => {
-  const catergoryOptions = [
+const RegistrationForm = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [dob, setDob] = useState("");
+  const [contact, setContact] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState([]);
+  const [emergencyContact, setEmergencyContact] = useState("");
+
+  const categoryOptions = [
     { value: "Male", label: "Male" },
     { value: "Female", label: "Female" },
     { value: "Rather Not Say", label: "Rather Not Say" },
   ];
 
   const customStyles = {
-    option: (styles, { isFocused, isSelected, isHovered }) => {
-      return {
-        ...styles,
-        backgroundColor: isSelected
-          ? "#eb6753"
-          : isHovered
-          ? "#eb675312"
-          : isFocused
-          ? "#eb675312"
-          : undefined,
-      };
-    },
+    option: (styles, { isFocused, isSelected, isHovered }) => ({
+      ...styles,
+      backgroundColor: isSelected
+        ? "#eb6753"
+        : isHovered || isFocused
+        ? "#eb675312"
+        : undefined,
+    }),
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const memberInfo = {
+      firstName,
+      lastName,
+      dob,
+      contact,
+      email,
+      gender: gender.map((g) => g.value), // Extract selected gender values
+      emergencyContact,
+    };
+
+    try {
+      await register_member(memberInfo); // Send data to API
+      alert("Member information submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting member info:", error);
+      alert("Failed to submit member information.");
+    }
   };
 
   return (
-    <form className="form-style1">
+    <form className="form-style1" onSubmit={handleSubmit}>
       <div className="row">
         <div className="col-sm-6 col-xl-4">
           <div className="mb30">
@@ -36,6 +64,8 @@ const GymMembership = () => {
               className="form-control"
               placeholder="First Name"
               required
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
             />
           </div>
         </div>
@@ -50,6 +80,8 @@ const GymMembership = () => {
               className="form-control"
               placeholder="Last Name"
               required
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
             />
           </div>
         </div>
@@ -63,6 +95,8 @@ const GymMembership = () => {
               type="date"
               className="form-control"
               required
+              value={dob}
+              onChange={(e) => setDob(e.target.value)}
             />
           </div>
         </div>
@@ -78,6 +112,8 @@ const GymMembership = () => {
               placeholder="Contact"
               required
               pattern="[0-9]{10}"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
             />
           </div>
         </div>
@@ -92,6 +128,8 @@ const GymMembership = () => {
               className="form-control"
               placeholder="Your Email"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
         </div>
@@ -104,12 +142,14 @@ const GymMembership = () => {
             <div className="location-area">
               <Select
                 name="gender"
-                options={catergoryOptions}
+                options={categoryOptions}
                 styles={customStyles}
                 className="select-custom pl-0"
                 classNamePrefix="select"
                 required
                 isMulti
+                value={gender}
+                onChange={(selected) => setGender(selected)}
               />
             </div>
           </div>
@@ -126,25 +166,18 @@ const GymMembership = () => {
               placeholder="Emergency Contact"
               required
               pattern="[0-9]{10}"
-            />
-          </div>
-        </div>
-
-        <div className="col-sm-6 col-xl-4">
-          <div className="mb30">
-            <label className="heading-color ff-heading fw600 mb10">
-              Date Of Joining
-            </label>
-            <input
-              type="date"
-              className="form-control"z
-              required
+              value={emergencyContact}
+              onChange={(e) => setEmergencyContact(e.target.value)}
             />
           </div>
         </div>
       </div>
+
+      <button type="submit" className="ud-btn btn-white2 mb30">
+        Register <i className="fal fa-arrow-right-long" />
+      </button>
     </form>
   );
 };
 
-export default GymMembership;
+export default RegistrationForm;

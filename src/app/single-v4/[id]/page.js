@@ -1,6 +1,5 @@
 import MobileMenu from "@/components/common/mobile-menu";
 import WorkoutPlanDetails from "@/components/property/property-single-style/common/WorkoutPlanDetails";
-import WorkOutPlanVideo from "@/components/property/property-single-style/common/WorkOutPlanVideo";
 import WorkOutDescriptions from "@/components/property/property-single-style/common/WokOutDescriptions";
 import ReviewBoxForm from "@/components/property/property-single-style/common/ReviewBoxForm";
 import AllReviews from "@/components/property/property-single-style/common/reviews";

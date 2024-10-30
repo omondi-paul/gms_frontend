@@ -132,7 +132,7 @@ const AddPropertyTabContent = () => {
             <h4 className="title fz17 mb30">Listing Location</h4>
             <LocationField />
           </div>
-        </div>
+        </div>z
       </div>
     </>
   );
