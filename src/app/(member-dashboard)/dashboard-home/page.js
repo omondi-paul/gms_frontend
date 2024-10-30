@@ -7,10 +7,6 @@ import RecentActivities from "@/components/property/dashboard/dashboard-home/Rec
 import TopStateBlock from "@/components/property/dashboard/dashboard-home/TopStateBlock";
 import PropertyViews from "@/components/property/dashboard/dashboard-home/property-view";
 
-export const metadata = {
-  title: "Dashboard Home || Homez - Real Estate NextJS Template",
-};
-
 const DashboardHome = () => {
   return (
     <>
@@ -56,8 +52,6 @@ const DashboardHome = () => {
                 </div>
               </div>
             </div>
-
-            <Footer />
           </div>
         </div>
       </div>

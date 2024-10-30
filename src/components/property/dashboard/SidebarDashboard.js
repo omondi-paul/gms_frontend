@@ -91,7 +91,7 @@ const SidebarDashboard = () => {
       title: "ACCOUNT",
       items: [
         {
-          href: "/dashboard-profile",
+          href: "/dashboard-my-profile",
           icon: "flaticon-user",
           text: "My Profile",
         },

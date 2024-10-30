@@ -3,15 +3,16 @@ import MobileMenu from "@/components/common/mobile-menu";
 import DboardMobileNavigation from "@/components/property/dashboard/DboardMobileNavigation";
 import Footer from "@/components/property/dashboard/Footer";
 import SidebarDashboard from "@/components/property/dashboard/SidebarDashboard";
-import RecentActivities from "@/components/property/dashboard/dashboard-home/RecentActivities";
-import TopStateBlock from "@/components/property/dashboard/dashboard-home/TopStateBlock";
-import PropertyViews from "@/components/property/dashboard/dashboard-home/property-view";
+import ChangePasswordForm from "@/components/property/dashboard/dashboard-profile/ChangePasswordForm";
+import PersonalInfo from "@/components/property/dashboard/dashboard-profile/PersonalInfo";
+import ProfileBox from "@/components/property/dashboard/dashboard-profile/ProfileBox";
+import SocialField from "@/components/property/dashboard/dashboard-profile/SocialField";
 
 export const metadata = {
-  title: "Dashboard Home || Homez - Real Estate NextJS Template",
+  title: "Dashboard My Profile || Homez - Real Estate NextJS Template",
 };
 
-const DashboardHome = () => {
+const DashboardMyProfile = () => {
   return (
     <>
       {/* Main Header Nav */}
@@ -35,39 +36,46 @@ const DashboardHome = () => {
                   <DboardMobileNavigation />
                 </div>
                 {/* End .col-12 */}
+              </div>
+              {/* End .row */}
 
+              <div className="row align-items-center pb40">
                 <div className="col-lg-12">
                   <div className="dashboard_title_area">
-                    <h2>Howdy, Ali!</h2>
+                    <h2>My Profile</h2>
                     <p className="text">We are glad to see you again!</p>
                   </div>
                 </div>
-                {/* col-lg-12 */}
               </div>
               {/* End .row */}
 
               <div className="row">
-                <TopStateBlock />
-              </div>
-              {/* End .row */}
-
-              <div className="row">
-                <div className="col-xl-8">
+                <div className="col-xl-12">
                   <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                    <div className="row">
-                      <PropertyViews />
+                    <div className="col-xl-7">
+                      <ProfileBox />
                     </div>
-                  </div>
-                </div>
-                {/* End col-xl-8 */}
+                    {/* End ProfileBox */}
 
-                <div className="col-xl-4">
-                  <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                    <h4 className="title fz17 mb25">Recent Activities</h4>
-                    <RecentActivities />
+                    <div className="col-lg-12">
+                      <PersonalInfo />
+                    </div>
+                    {/* End PersonalInfo */}
                   </div>
+                  {/* End .ps-widget */}
+
+                  <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+                    <h4 className="title fz17 mb30">Social Media</h4>
+                    <SocialField />
+                  </div>
+                  {/* End .ps-widget */}
+
+                  <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+                    <h4 className="title fz17 mb30">Change password</h4>
+                    <ChangePasswordForm />
+                  </div>
+                  {/* End .ps-widget */}
                 </div>
-                {/* End .col-xl-4 */}
               </div>
               {/* End .row */}
             </div>
@@ -83,4 +91,4 @@ const DashboardHome = () => {
   );
 };
 
-export default DashboardHome;
+export default DashboardMyProfile;
