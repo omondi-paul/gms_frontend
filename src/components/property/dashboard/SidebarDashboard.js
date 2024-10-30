@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const SidebarDashboard = () => {
   const pathname = usePathname();
 
-  
   const sidebarItems = [
     {
       title: "MAIN",
@@ -19,58 +18,93 @@ const SidebarDashboard = () => {
         {
           href: "/dashboard-message",
           icon: "flaticon-chat-1",
-          text: "Message",
+          text: "Messages",
         },
       ],
     },
     {
-      title: "MANAGE MY PROFILE",
+      title: "MEMBERS",
       items: [
         {
-          href: "/dashboard-member",
+          href: "/dashboard-membership",
           icon: "flaticon-new-tab",
-          text: "Gym Member",
+          text: "Membership Overview",
         },
-    //     {
-    //       href: "/dashboard-my-properties",
-    //       icon: "flaticon-home",
-    //       text: "My Properties",
-    //     },
-    //     {
-    //       href: "/dashboard-my-favourites",
-    //       icon: "flaticon-like",
-    //       text: "My Favorites",
-    //     },
-    //     {
-    //       href: "/dashboard-saved-search",
-    //       icon: "flaticon-search-2",
-    //       text: "Saved Search",
-    //     },
-    //     {
-    //       href: "/dashboard-reviews",
-    //       icon: "flaticon-review",
-    //       text: "Reviews",
-    //     },
+        {
+          href: "/dashboard-member-progress",
+          icon: "flaticon-like",
+          text: "Progress Tracking",
+        },
+        {
+          href: "/dashboard-member-bookings",
+          icon: "flaticon-calendar",
+          text: "Class Bookings",
+        },
       ],
     },
     {
-      title: "MANAGE ACCOUNT",
+      title: "TRAINERS",
       items: [
-        // {
-        //   href: "/dashboard-my-package",
-        //   icon: "flaticon-protection",
-        //   text: "My Package",
-        // },
         {
-          href: "/dashboard-my-profile",
+          href: "/dashboard-trainer-schedule",
+          icon: "flaticon-calendar",
+          text: "Trainer Schedule",
+        },
+        {
+          href: "/dashboard-trainer-feedback",
+          icon: "flaticon-review",
+          text: "Trainer Feedback",
+        },
+        {
+          href: "/dashboard-training-programs",
+          icon: "flaticon-program",
+          text: "Manage Training Programs",
+        },
+      ],
+    },
+    {
+      title: "ADMIN",
+      items: [
+        {
+          href: "/dashboard-class-management",
+          icon: "flaticon-class",
+          text: "Class Management",
+        },
+        {
+          href: "/dashboard-revenue",
+          icon: "flaticon-financial",
+          text: "Revenue Overview",
+        },
+        {
+          href: "/dashboard-user-management",
+          icon: "flaticon-user",
+          text: "User Management",
+        },
+        {
+          href: "/dashboard-settings",
+          icon: "flaticon-settings",
+          text: "System Settings",
+        },
+      ],
+    },
+    {
+      title: "ACCOUNT",
+      items: [
+        {
+          href: "/dashboard-profile",
           icon: "flaticon-user",
           text: "My Profile",
         },
-        // {
-        //   href: "/login",
-        //   icon: "flaticon-logout",
-        //   text: "Logout",
-        // },
+        {
+          href: "/dashboard-subscription",
+          icon: "flaticon-package",
+          text: "Subscription & Billing",
+        },
+        {
+          href: "/logout",
+          icon: "flaticon-logout",
+          text: "Logout",
+        },
       ],
     },
   ];
@@ -91,9 +125,9 @@ const SidebarDashboard = () => {
               <div key={itemIndex} className="sidebar_list_item">
                 <Link
                   href={item.href}
-                  className={`items-center   ${
+                  className={`items-center ${
                     pathname == item.href ? "-is-active" : ""
-                  } `}
+                  }`}
                 >
                   <i className={`${item.icon} mr15`} />
                   {item.text}

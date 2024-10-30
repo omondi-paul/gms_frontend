@@ -5,11 +5,6 @@ export const pageItems = [
   { href: "/workout-plans", label: "Workout Plans" },
 ];
 
-
-
-
-
-
 export const homeItems = [
   { href: "/", label: "Home v1" },
   { href: "/home-v2", label: "Home v2" },
