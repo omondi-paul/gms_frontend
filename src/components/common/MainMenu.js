@@ -39,6 +39,14 @@ const MainMenu = () => {
           </span>
         </a>
       </li>
+
+      <li className="megamenu_style dropitem">
+        <a className="list-item" href="#" onClick={() => (window.location.href = "/registration")}>
+          <span className={topMenu === "registration" ? "title menuActive" : "title"}>
+            Registration
+          </span>
+        </a>
+      </li>
     </ul>
   );
 };
