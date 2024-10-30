@@ -1,7 +1,7 @@
 import CallToActions from "@/components/common/CallToActions";
 import DefaultHeader from "@/components/common/DefaultHeader";
 import MobileMenu from "@/components/common/mobile-menu";
-import RegistrationForm from "@/components/pages/RegistrationForm";
+import LockerBooking  from "@/components/pages/LockerBooking";
 
 const register = () => {
   return (
@@ -13,7 +13,7 @@ const register = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-style1">
-                <h2 className="title">Register as a Member</h2>
+                <h2 className="title">Locker Booking Page</h2>
               </div>
             </div>
           </div>
@@ -25,7 +25,7 @@ const register = () => {
             <div className="col-lg-12">
               <div className="ui-content">
                 <div className="accordion-style1 faq-page mb-4 mb-lg-5">
-                  <RegistrationForm />
+                  <LockerBooking />
                 </div>
               </div>
 
